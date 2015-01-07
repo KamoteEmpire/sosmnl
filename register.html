@@ -9,12 +9,12 @@
 	<script src="js/jquery-1.10.2.min.js"></script>
 	<script src="js/jquery.mobile-1.4.2.min.js"></script>
 	<script>
-	/*$(document).ready(function(){
+	$(document).ready(function(){
 		$('#submit').click(function(){
 		$.mobile.loading("show");
 		document.getElementById('txtUsername').value = localStorage.getItem('datausername');
 		document.getElementById('txtEmail').value = localStorage.getItem('dataemail');
-		$.post("sendemail.php", $("#signupform").serialize(),  function(response) {
+		$.post("http://iligtas.ph/sosmnl/sendemail.php", $("#signupform").serialize(),  function(response) {
 		$('#success').html(response);
 		$("#popuptext").html(response);	
 							$( "#popupAfter" ).popup();
@@ -27,7 +27,7 @@
  
 	});
 	
-	});*/
+	});
 	</script>
 	
 </head>
@@ -44,16 +44,15 @@
 		<script type="text/javascript" src="js/jquery.validate.js"></script>
 		
 		<form id="signupform" action="javascript:sendtoajax();">
-		<fieldset class="ui-grid-a">
-		<div class="ui-block-a">
+		
 		<input type="text"  name="txtFirstName" id="txtFirstName" placeholder="First Name"  />
-		</div>
+		
 			
-		<div class="ui-block-b">	
+			
 		<input type="text"  name="txtMiddleName" id="txtMiddleName" placeholder="Middle Name" />
-		</div>
+		
 		<small id="errortxtFirstName" style="color:#ff0000;display:block"></small>
-		</fieldset>
+		
 		<input type="text" name="txtLastName" id="txtLastName" placeholder="Last Name"  />
 			<small id="errortxtLastName" style="color:#ff0000;display:block"></small>
 			
@@ -199,22 +198,22 @@
 			<small id="errortxtCpass" style="color:#ff0000;display:block"></small>
 		
 		<label>Address:</label>
-		<fieldset class="ui-grid-a">
-		<div class="ui-block-a">
+		
+		
 		<input type="text" name="txtStreet" id="txtStreet" placeholder="Street" />
-		</div>
-		<div class="ui-block-b">
+		
+		
 		<input type="text" name="txtBarangay" id="txtBarangay" placeholder="Barangay" />
-		</div>
-		</fieldset>
-		<fieldset class="ui-grid-a">
-		<div class="ui-block-a">
+		
+		
+		
+		
 		<input type="text" name="txtCity" id="txtCity" placeholder="Town/City" />
-		</div>
-		<div class="ui-block-b">
+		
+		
 		<input type="text" name="txtZipcode" id="txtZipcode" placeholder="Zipcode" />
-		</div>
-		</fieldset>
+		
+		
 		<input type="text" name="txtProvince" id="txtProvince" placeholder="Province" />
 		<input id="" type="submit" data-theme="d" value="Submit" >
 		
@@ -303,7 +302,7 @@
 			if(form.valid)
 				{	
 				$.mobile.loading("show");
-					$.getJSON("emailval.php?callback=?", form.serialize() ,function(data)
+					$.getJSON("http://iligtas.ph/sosmnl/emailval.php?callback=?", form.serialize() ,function(data)
 					{
 					
 					if(data.eexists =="exists")
@@ -322,7 +321,7 @@
 					{
 					
 						
-						/*$.post("sendemail.php", $("#signupform").serialize(),  function(response) {
+						/*$.post("http://iligtas.ph/sosmnl/sendemail.php", $("#signupform").serialize(),  function(response) {
 							$('#success').html(response);
 							$("#popuptext").html(response);	
 							$( "#popupAfter" ).popup();
@@ -331,13 +330,13 @@
 							transition: "pop" });
 							$.mobile.loading("hide");
 						});
-						return false;
+						return false;*/
 					
-						*/
+						
 					
 					
 					$.mobile.loading("show");
-					$.getJSON("uregister.php?callback=?", form.serialize(),function(data)
+					$.getJSON("http://iligtas.ph/sosmnl/uregister.php?callback=?", form.serialize(),function(data)
 					{
 						alert("Congratulations. Registration Complete! Welcome to SOS MANILA");
 						

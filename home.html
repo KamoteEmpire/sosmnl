@@ -187,7 +187,13 @@ function showError(error) {
 	
 	</script>
 	
-	
+	<script>
+$(document).ready(function(){
+  $("#panicpic").click(function(){
+   $('#panicpic').fadeOut();
+  });
+});
+</script>
 	
 	<style>
 	
@@ -209,7 +215,7 @@ function showError(error) {
 	#panicbutton{
 		position: relative;
 		display: block;
-		left: 90%;
+		left: 85%;
 	}
 	</style>
 	
@@ -243,7 +249,7 @@ function showError(error) {
 
 	<div role="main" class="ui-content">
 		<div id="panicbutton">
-		<a href="sms:+09461461134?body= I am in emergency situation, I need help."><img src="images/panicbutton.png" style="width: 15%;" /></a>
+		<a href="sms:+09461461134?body= I am in emergency situation, I need help."><img id="panicpic" src="images/panicbutton.png" style="width: 15%;" /></a>
 		</div>
 		<!--<p><a href="#two" class="ui-btn ui-icon-delete ui-btn-icon-notext ui-corner-all">Personal Alarm</a></p>-->
 		<a   data-transition="slideup"><img src="images/logo-small.png" onClick="logoutaccount2()" id="myLogo" style="margin-top: 7%; width:70%;margin-left:auto;margin-right:auto;display:block"></a>
